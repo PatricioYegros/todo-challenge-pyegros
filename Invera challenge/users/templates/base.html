@@ -1,0 +1,26 @@
+<!-- todo_list/users/templates/base.html -->
+<!-- Base template -->
+<!doctype html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Simple.css-->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Log-in</title>
+</head>
+
+<body>
+        <h1 onclick="location.href='{% url "index" %}'">Log-in</h1>
+    </div>
+    <div>
+        {% block content %}
+        This content will be replaced by different html code for each page.
+        {% endblock %}
+    </div>
+</body>
+
+</html> 

@@ -1,0 +1,17 @@
+<!-- todo_list/todo_app/templates/todo_app/todoitem_confirm_delete.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h3>Borrar Tarea</h3>
+
+<p>¿Está seguro de querer borrar la tarea: <b>{{ object.title }}</b>?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input value="Si, eliminar" type="submit">
+        <input value="Cancel" type="button" onclick="location.href='{% url "index" %}';" />
+    </form>
+
+{% endblock %}

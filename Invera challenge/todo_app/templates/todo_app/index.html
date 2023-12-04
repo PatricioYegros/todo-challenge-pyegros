@@ -1,0 +1,36 @@
+<!-- todo_list/todo_app/templates/todo_app/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<!--index.html-->
+{% if object_list %}
+<h3>Tareas actuales:</h3>
+{% endif %}
+<ul>
+    {% for task in object_list %}
+    <li>
+    {% if task.status %}
+        <div role="button"
+            onclick="location.href='{% url "task-update" task.id %}'">
+            Titulo de la tarea: {{ task.title }}. Estado: Completada. Fecha: {{ task.created_date }} 
+        </div>
+    {% else %}
+        <div role="button"
+            onclick="location.href='{% url "task-update" task.id %}'">
+            Titulo de la tarea: {{ task.title }}. Estado: Incompleta. Fecha: {{ task.created_date }} 
+        </div>
+    {% endif %}
+    </li>
+    {% empty %}
+    <h4>No tenes ninguna tarea creada!</h4>
+    {% endfor %}
+</ul>
+<p>
+    <input value="Añadir tarea nueva" type="button"
+        onclick="location.href='{% url "task-add" %}'"/>
+    
+    <input value="Hacer una busqueda" type="button"
+        onclick="location.href='{% url "task-search" %}'"/>
+</p>
+
+{% endblock %}
