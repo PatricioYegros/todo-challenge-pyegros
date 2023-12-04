@@ -1,5 +1,5 @@
 1) Abrir CMD
-2) Ir al directorio donde se encuentra la app (al mismo nivel que este readme)
+2) Ir a "Invera challenge" (directorio donde se encuentra la app) 
 3) Ejecutar el siguiente comando: 
 	"venv\Scripts\activate.bat"
 4) Luego ejecutar los siguientes comandos, según se desee:
